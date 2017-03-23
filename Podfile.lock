@@ -1,18 +1,18 @@
 PODS:
-  - Pageboy (0.4.11)
+  - Pageboy (0.4.12)
   - PureLayout (3.0.2)
-  - Tabman (0.4.0):
+  - Tabman (0.4.1):
     - Pageboy (~> 0.4.0)
     - PureLayout (~> 3.0.0)
 
 DEPENDENCIES:
-  - Tabman (~> 0.4.0)
+  - Tabman (= 0.4.1)
 
 SPEC CHECKSUMS:
-  Pageboy: 32d84608c26425cd545c08d71232f7a423aa79c6
+  Pageboy: 4a0a478d78cf5b31a5439828bc8f6519edf4e508
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  Tabman: 98af683fa5c587854e9a656189d8b0402622585d
+  Tabman: 4028b84b186f38c4c55944de47468ebcdcf1a1f6
 
-PODFILE CHECKSUM: 67acf27a044057c50b607d3ec152e67e275a2cff
+PODFILE CHECKSUM: a79d0f964ab36b557b64b1a789fa942c713d737b
 
 COCOAPODS: 1.2.1.beta.1

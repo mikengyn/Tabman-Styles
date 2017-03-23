@@ -8,5 +8,6 @@ target 'Twitter' do
   project './Twitter/Twitter.xcodeproj'
   workspace 'Tabman-Styles'
 
-  pod 'Tabman', '~> 0.4.0'
+  pod 'Tabman', '0.4.1'
+
 end
