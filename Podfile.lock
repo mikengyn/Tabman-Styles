@@ -6,13 +6,23 @@ PODS:
     - PureLayout (~> 3.0.0)
 
 DEPENDENCIES:
-  - Tabman (= 0.4.1)
+  - Tabman (from `https://github.com/uias/Tabman.git`, branch `develop`)
+
+EXTERNAL SOURCES:
+  Tabman:
+    :branch: develop
+    :git: https://github.com/uias/Tabman.git
+
+CHECKOUT OPTIONS:
+  Tabman:
+    :commit: a134ae7fc2ac5395880f34adb654eefce3cda199
+    :git: https://github.com/uias/Tabman.git
 
 SPEC CHECKSUMS:
   Pageboy: 4a0a478d78cf5b31a5439828bc8f6519edf4e508
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  Tabman: 4028b84b186f38c4c55944de47468ebcdcf1a1f6
+  Tabman: 442ecb65a6dbf919d7f9077df06a3a4d5eb373aa
 
-PODFILE CHECKSUM: c08fc0f74ab842555005b750cc55e6b8c71bbc19
+PODFILE CHECKSUM: 5c9a47739a19be4143c6438621b739f7f2b1622e
 
 COCOAPODS: 1.2.1.beta.1

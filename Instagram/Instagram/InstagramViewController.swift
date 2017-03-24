@@ -16,6 +16,16 @@ class InstagramViewController: TabmanViewController {
         super.viewDidLoad()
         
         self.dataSource = self
+        
+        self.bar.style = .buttonBar
+        self.bar.appearance = TabmanBar.Appearance({ (appearance) in
+            
+            appearance.indicator.color = .black
+            appearance.indicator.lineWeight = .thin
+            appearance.indicator.compresses = true
+            
+            appearance.text.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        })
     }
 }
 

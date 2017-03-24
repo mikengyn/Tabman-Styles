@@ -6,7 +6,7 @@ use_frameworks!
 
 def shared_pods
 
-  pod 'Tabman', '0.4.1'
+  pod 'Tabman', :git => 'https://github.com/uias/Tabman.git', :branch => 'develop'
 
 end
 
