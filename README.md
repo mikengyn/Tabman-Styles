@@ -18,6 +18,13 @@ The following styles are available currently:
 
 A reproduction of the Tweet filter bar available in the 'Me' tab of the official Twitter app; which made an appearance in 2017.
 
+### Instagram
+
+<p align="left">
+    <img src="Artwork/styles/instagram-notifications.png" width="375" alt="Instagram-Notifications"/>
+
+A reproduction of the navigation bar found in the Notifications tab on Instagram. Features an inset compressing line indicator & colour transitioning text labels.
+
 ## Requests
 To request a style, please feel free to raise an [issue](https://github.com/YorkUI/Tabman-Styles/issues/new).
 
