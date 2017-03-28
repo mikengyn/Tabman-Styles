@@ -31,10 +31,10 @@ A reproduction of the Tweet filter bar available in the 'Me' tab of the official
 A reproduction of the navigation bar found in the Notifications tab on Instagram. Features an inset compressing line indicator & colour transitioning text labels.
 
 ## Requests
-To request a style, please feel free to raise an [issue](https://github.com/YorkUI/Tabman-Styles/issues/new).
+To request a style, please feel free to raise an [issue](https://github.com/uias/Tabman-Styles/issues/new).
 
 ## Contributing
-New styles or any other nice features are welcome via pull request on GitHub at [https://github.com/YorkUI/Tabman-Styles](https://github.com/YorkUI/Tabman-Styles).
+New styles or any other nice features are welcome via pull request on GitHub at [https://github.com/uias/Tabman-Styles](https://github.com/uias/Tabman-Styles).
 
 ## License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
