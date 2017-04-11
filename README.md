@@ -2,7 +2,7 @@
     <img src="Artwork/logo.png" width="890" alt="Tabman"/>
 </p>
 
-[![Tabman](https://img.shields.io/badge/Tabman-v0.4.4-135389.svg?style=flat)](https://github.com/uias/Tabman/releases/tag/0.4.2)
+[![Tabman](https://img.shields.io/badge/Tabman-v0.4.7-135389.svg?style=flat)](https://github.com/uias/Tabman/releases/tag/0.4.2)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 
