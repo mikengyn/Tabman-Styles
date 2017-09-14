@@ -12,8 +12,16 @@ import Pageboy
 
 class InstagramViewController: TabmanViewController {
 
+    private(set) var viewControllers: [InstagramChildViewController]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewControllers = [
+            childViewController(withTitle: "Following"),
+            childViewController(withTitle: "You")
+        ]
+        self.bar.items = viewControllers.flatMap({ Item(title: $0.pageTitle!) })
         
         self.dataSource = self
         
@@ -24,31 +32,8 @@ class InstagramViewController: TabmanViewController {
             appearance.indicator.lineWeight = .thin
             appearance.indicator.compresses = true
             
-            appearance.text.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+            appearance.text.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.medium)
         })
-    }
-}
-
-extension InstagramViewController: PageboyViewControllerDataSource {
-    
-    func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
-        let followingViewController = childViewController(withTitle: "Following")
-        let youViewController = childViewController(withTitle: "You")
-        
-        let viewControllers = [followingViewController, youViewController]
-        
-        // create bar items
-        var barItems = [TabmanBarItem]()
-        for viewController in viewControllers {
-            barItems.append(TabmanBarItem(title: viewController.pageTitle!))
-        }
-        
-        self.bar.items = barItems
-        return viewControllers
-    }
-    
-    func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyViewController) -> PageboyViewController.PageIndex? {
-        return nil
     }
     
     private func childViewController(withTitle title: String) -> InstagramChildViewController {
@@ -59,5 +44,20 @@ extension InstagramViewController: PageboyViewControllerDataSource {
         viewController.pageTitle = title
         
         return viewController
+    }
+}
+
+extension InstagramViewController: PageboyViewControllerDataSource {
+    
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        return viewControllers.count
+    }
+    
+    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+        return viewControllers[index]
+    }
+    
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
+        return nil
     }
 }

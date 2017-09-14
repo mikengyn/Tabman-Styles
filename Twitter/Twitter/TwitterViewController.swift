@@ -12,8 +12,18 @@ import Pageboy
 
 class TwitterViewController: TabmanViewController {
     
+    private(set) var viewControllers: [TwitterChildViewController]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewControllers = [
+            childViewController(withTitle: "Tweets"),
+            childViewController(withTitle: "Tweets & Replies"),
+            childViewController(withTitle: "Media"),
+            childViewController(withTitle: "Likes")
+        ]
+        self.bar.items = self.viewControllers.flatMap({ Item(title: $0.pageTitle!.uppercased()) })
         
         self.dataSource = self
         
@@ -25,34 +35,12 @@ class TwitterViewController: TabmanViewController {
             appearance.state.selectedColor = UIColor.twitterBlue
             appearance.state.color = UIColor.twitterGray
             
-            appearance.text.font = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightMedium)
+            appearance.text.font = UIFont.systemFont(ofSize: 14.0, weight: .medium)
             
             // layout
             appearance.layout.height = .explicit(value: 44.0)
             appearance.layout.interItemSpacing = 20.0
         })
-    }
-    
-}
-
-extension TwitterViewController: PageboyViewControllerDataSource {
-    
-    func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
-        let tweetsViewController = childViewController(withTitle: "Tweets")
-        let repliesViewController = childViewController(withTitle: "Tweets & Replies")
-        let mediaViewController = childViewController(withTitle: "Media")
-        let likesViewController = childViewController(withTitle: "Likes")
-        
-        let viewControllers = [tweetsViewController, repliesViewController, mediaViewController, likesViewController]
-        
-        // create bar items
-        var barItems = [TabmanBarItem]()
-        for viewController in viewControllers {
-            barItems.append(TabmanBarItem(title: viewController.pageTitle!.uppercased()))
-        }
-        
-        self.bar.items = barItems
-        return viewControllers
     }
     
     private func childViewController(withTitle title: String) -> TwitterChildViewController {
@@ -64,8 +52,19 @@ extension TwitterViewController: PageboyViewControllerDataSource {
         
         return viewController
     }
+}
+
+extension TwitterViewController: PageboyViewControllerDataSource {
     
-    func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyViewController) -> PageboyViewController.PageIndex? {
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        return viewControllers.count
+    }
+    
+    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+        return viewControllers[index]
+    }
+    
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
 }
